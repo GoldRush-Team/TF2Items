@@ -298,8 +298,6 @@ void CSCICopy(CEconItemView *olditem, CEconItemView *newitem)
 	copymember(m_ItemHandle);
 
 	copymember(m_bColorInit);
-	copymember(m_bPaintOverrideInit);
-	copymember(m_bHasPaintOverride);
 
 	copymember(m_flOverrideIndex);
 	copymember(m_unRGB);

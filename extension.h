@@ -82,8 +82,11 @@ public:
 	int32 m_nRefundableCurrency; //12
 };
 
+#ifndef PLATFORM_64BITS
 #pragma pack(push, 4)
-
+#else
+#pragma pack(push, 8)
+#endif
 
 class CEconItemHandle
 {
@@ -139,9 +142,6 @@ public:
 	CEconItemHandle m_ItemHandle; //40 (44, 48, 52, 56, 60)
 
 	bool m_bColorInit; //64
-	bool m_bPaintOverrideInit; //65
-	bool m_bHasPaintOverride; //66
-	//67
 
 	float m_flOverrideIndex; //68
 	uint32 m_unRGB; //72
@@ -163,6 +163,10 @@ public:
 static_assert(sizeof(CEconItemView) == 148, "CEconItemView - incorrect size on this compiler");
 static_assert(sizeof(CEconItemHandle) == 24, "CEconItemHandle - incorrect size on this compiler");
 static_assert(sizeof(CAttributeList) == 28, "CAttributeList - incorrect size on this compiler");
+#else
+static_assert(sizeof(CEconItemView) == 208, "CEconItemView - incorrect size on this compiler");
+static_assert(sizeof(CEconItemHandle) == 32, "CEconItemHandle - incorrect size on this compiler");
+static_assert(sizeof(CAttributeList) == 48, "CAttributeList - incorrect size on this compiler");
 #endif
 
 // enable to debug memory layout issues
