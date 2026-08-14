@@ -26,7 +26,7 @@
  * @brief TF2Items extension code header.
  */
 
-#include "smsdk_ext.hpp"
+#include "smsdk_ext.h"
 
 //#include "iplayerinfo.h"
 //#include "convar.h"
@@ -159,9 +159,11 @@ public:
 
 #pragma pack(pop)
 
+#ifndef PLATFORM_64BITS
 static_assert(sizeof(CEconItemView) == 148, "CEconItemView - incorrect size on this compiler");
 static_assert(sizeof(CEconItemHandle) == 24, "CEconItemHandle - incorrect size on this compiler");
 static_assert(sizeof(CAttributeList) == 28, "CAttributeList - incorrect size on this compiler");
+#endif
 
 // enable to debug memory layout issues
 #if 0

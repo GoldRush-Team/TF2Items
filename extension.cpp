@@ -37,7 +37,7 @@
 
 #define NO_FORCE_QUALITY
 
-#include "extension.hpp"
+#include "extension.h"
 
 TF2Items g_TF2Items;
 
@@ -409,11 +409,11 @@ void Hook_ClientPutInServer(edict_t *pEntity, char const *playername)
 bool TF2Items::SDK_OnLoad(char *error, size_t maxlen, bool late) {
 
 	char conf_error[255] = "";
-	if (!gameconfs->LoadGameConfigFile("tf2.items", &g_pGameConf, conf_error, sizeof(conf_error)))
+	if (!gameconfs->LoadGameConfigFile("tf_goldrush.items", &g_pGameConf, conf_error, sizeof(conf_error)))
 	{
 		if (conf_error[0])
 		{
-			snprintf(error, maxlen, "Could not read tf2.items.txt: %s\n", conf_error);
+			snprintf(error, maxlen, "Could not read tf_goldrush.items.txt: %s\n", conf_error);
 		}
 		return false;
 	}
