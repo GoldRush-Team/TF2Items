@@ -37,7 +37,7 @@
 // #include "version.h"
 
 /* Basic information exposed publicly */
-#define SMEXT_CONF_NAME			"TF2Items (GR)"
+#define SMEXT_CONF_NAME			"TF2Items"
 #define SMEXT_CONF_DESCRIPTION	"TF2 Item Modifier"
 #define SMEXT_CONF_VERSION		""
 #define SMEXT_CONF_AUTHOR		"Asherkin & AzuiSleet & Damizean, GR port by conneath"
